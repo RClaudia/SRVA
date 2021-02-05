@@ -1,59 +1,84 @@
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Proiect SRVA</title>
+	<meta charset="UTF-8" />
+	<title>Proiect SRVA</title>
 
-<!-- bs4 css -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
-	
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-<!-- TensorFlow.js script -->
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
-	
-<!-- canvas script -->
-<script src="fabric.js"></script>
-	
-<!-- main script -->
-<script src = "main.js" > </script>
-
-<!-- main css -->
-<link rel = "stylesheet" href="main.css" > 
+	<!-- bs4 css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<!-- TensorFlow.js script -->
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+	<!-- canvas script -->
+	<script src="fabric.js"></script>
+	<!-- index script -->
+	<script src = "index.js" > </script>
+	<!-- index css -->
+	<link rel = "stylesheet" href="index.css" > 
 	
 </head>
+
 <body>
-<p>commit 2.5</p>
-<div class="row">
-  <div class="col" style ='margin-left:100px;'>
-<h7 id ='status' >Se asteapta incarcarea modelului... </h7>	  
-<canvas id="canvas" width="300" height="300" class="canvas" style="border:1px solid #b9bfc9;margin-top:10px;"></canvas>
-<div class="btn-group" style = 'margin-top:20px; '>
-<input type="range" min="5" max="20" value="10" class="slider" id="myRange" style ='margin-top:20px;'>
-<button type="button" class="btn btn-outline-dark" onclick ='erase()' style ='margin-left:10px;' disabled>Sterge</button>
-    </div>   
-</div>
-  <div class="col">
-    <section style="margin-top:0px">
-    <div class="pieID pie">
-	<p class="Pred_text">Predictie: </p>
-    </div>
-    <ul class="pieID legend" >
-      <li>
-        <em id = "sym1"></em>
+    <div class="header_body">
+		<h2>Proiect SRVA: Drawing identification</h2>
+		<hr>
+	</div>
+	<div class="description">
+		<h3>Scurta descriere</h3>
+		<p>Proiectul consta in definirea si antrenarea supervizata a unei retele neuronale ce este capabila sa identifice, dintr-o multime de 100 de figuri grafice diferite, categoria din care acestea fac parte.</p>
+		<p>Reteaua neuronala va realiza astfel o clasificare de tip multiclasa si va avea urmatoare strctura: un neuron pe stratul de intrare ce contine informatiile despre figura grafica realizata de catre utilizator, mai multe straturi ascunse, si 100 de neuroni pe stratul de iesire, fiecare neuron reprezentand categoria din care figura grafica face parte. </p>
+		<img src="images/retea.png" style="width:600px;">
+	</div>
+	<div class="sourcecode">
+		<h3>Codul sursa</h3>
+		<p>Codul sura este disponibil pe contul de github: <a href="https://github.com/RClaudia/SRVA">https://github.com/RClaudia/SRVA.</a></p>
+		<p>Pentru demo <button type="button" class="btn btn-outline-dark" onclick="location.href='#demo'" style ='margin-left:10px;height:35px;'>Click aici</button></p>
+		<br>
+	</div>
+	<div class="database">
+		<h3>Baza de date</h3>
+		<p>Baza de date utilizata este denumita <b>Quick Draw dataset</b> si reprezinta o colecție de 50 de milioane de figuri grafice din 345 de categorii. In realizarea acestui proiect am ales insa doar 100 de catogorii pentru antrenarea si testarea retelei neuronale.</p>
+		<p>Baza de date este structurata in 2 categorii: setul de date pentru antrenarea retelei (x figuri grafice) si setul de date pentru testarea acesteia (x figuri grafice).</p>
+		<p>img</p>
+		<p>Sursa bazei de date este următoarea: <a href="https://github.com/googlecreativelab/quickdraw-dataset">https://github.com/googlecreativelab/quickdraw-dataset</a></p>
+		<br>
+	</div>
+		<div class="arch" id="arch">
+		<h3>Arhitectura retelei</h3>
 		<p></p>
-        <span id = "prob1" ></span>
-      </li>
-    </ul>
-  </section>
-</div>
-</div>  
+	</div>
+	<div class="demo" id="demo">
+		<h3>Demo</h3>
+		<p></p>
+		<div class="row">
+			<div class="col" style ='margin-left:100px;'>
+				<h6 id ='status' >Se asteapta incarcarea modelului... </h6>	  
+				<canvas id="canvas" width="300" height="300" class="canvas" style="border:1px solid #b9bfc9;margin-top:10px;"></canvas>
+				<div class="btn-group" style = 'margin-top:20px; '>
+					<input type="range" min="5" max="20" value="10" class="slider" id="myRange" style ='margin-top:20px;'>
+					<button type="button" class="btn btn-outline-dark" onclick ='erase()' style ='margin-left:10px;' disabled>Sterge</button>
+				</div>   
+			</div>
+			<div class="col">
+				<section style="margin-top:0px">
+				<div class="pieID pie">
+					<p class="Pred_text">Predictie: </p>
+				</div>
+				<ul class="pieID legend" >
+					<li>
+						<em id = "sym1"></em>
+						<p></p>
+						<span id = "prob1" ></span>
+					</li>
+				</ul>
+				</section>
+			</div>
+		</div>  
+	</div>
 </body>
 <script>
 	console.log('starting');
