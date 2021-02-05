@@ -53,13 +53,20 @@
 	<div class="database">
 		<h3>Baza de date</h3>
 		<p>Baza de date utilizata este denumita <b>Quick Draw dataset</b> si reprezinta o colecție de 50 de milioane de figuri grafice din 345 de categorii. In realizarea acestui proiect am ales insa doar 100 de catogorii pentru antrenarea si testarea retelei neuronale.</p>
-		<p>Baza de date este structurata in 2 categorii: setul de date pentru antrenarea retelei (x figuri grafice) si setul de date pentru testarea acesteia (x figuri grafice).</p>
-		<p>img</p>
+		<p>Baza de date este structurata in 2 categorii: setul de date pentru antrenarea retelei (320000 figuri grafice) si setul de date pentru testarea acesteia (80000 figuri grafice).</p>
+		<img src="images/dataset.png" style="width:600;">
+		<br>
 		<p>Sursa bazei de date este următoarea: <a href="https://github.com/googlecreativelab/quickdraw-dataset">https://github.com/googlecreativelab/quickdraw-dataset</a></p>
 		<br>
 	</div>
 		<div class="arch" id="arch">
 		<h3>Arhitectura retelei</h3>
+		<p>img</p>
+		<p>Arhitectura retelei este alcatuita din 3 straturi de convolutie cu filtru de dimensiune 3x3 si functie de activare "ReLU".</p>
+		<p>Fiecare strat de convolutie este urmat de catre un strat de max-pooling ce ia vecinatati de 2x2, reducand astfel dimensiunea matricelor de intrare pentru urmatorul strat.</p>
+		<p>Deoarece hartile de trasaturi care rezulta din straturile de convolutie sau pooling sunt reprezentate ca matrici, acestea sunt aplatizate (vectorizate) folosind functia Flatten().</p>
+		<p>Reteaua mai contine si doua straturi de neuroni fully connected (dense) cu 64, respectiv 100 de neuroni.</p>
+		<br>
 		<p></p>
 	</div>
 	<div class="demo" id="demo">
