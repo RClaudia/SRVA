@@ -35,7 +35,7 @@
 		<p>Etape:</p>
 		<ul>
 			<li>Definirea, antrenarea si testarea retelei neuronale (in fisierul: <i>rusu_claudia_drawing_identification.ipynb</i>);</li>
-			<li>Salvarea modelului si convertirea in format *.json (in fisierul: <i>rusu_claudia_drawing_identification.ipynb</i>);</li>
+			<li>Salvarea modelului si convertirea in format *.json - pentru format web (in fisierul: <i>rusu_claudia_drawing_identification.ipynb</i>);</li>
 			<li>Pregatire demo:</li>
 			<li>1. Crearea unui canvas ce permite utilizatorului sa deseneze o noua figura grafica folosind fisierul: <i>Fabric.js Copyright 2008-2015, Printio (Juriy Zaytsev, Maxim Chernyak);</i> </li>
 			<li>2. Folosind modelul salvat anterior (<i>model.json</i>), se prezice clasa din care face parte figura desenata de catre utilizator;</li>
@@ -56,7 +56,7 @@
 		<p>Baza de date este structurata in 2 categorii: setul de date pentru antrenarea retelei (320000 figuri grafice) si setul de date pentru testarea acesteia (80000 figuri grafice).</p>
 		<img src="images/dataset.png" style="width:600;">
 		<br>
-		<p>Sursa bazei de date este următoarea: <a href="https://github.com/googlecreativelab/quickdraw-dataset">https://github.com/googlecreativelab/quickdraw-dataset</a></p>
+		<p>Sursa bazei de date este următoarea: <a href="https://github.com/googlecreativelab/quickdraw-dataset" target="_blank" rel="noopener noreferrer">https://github.com/googlecreativelab/quickdraw-dataset</a></p>
 		<br>
 	</div>
 		<div class="arch" id="arch">
@@ -65,7 +65,7 @@
 		<p>Arhitectura retelei este alcatuita din 3 straturi de convolutie cu filtru de dimensiune 3x3 si functie de activare "ReLU".</p>
 		<p>Fiecare strat de convolutie este urmat de catre un strat de max-pooling ce ia vecinatati de 2x2, reducand astfel dimensiunea matricelor de intrare pentru urmatorul strat.</p>
 		<p>Deoarece hartile de trasaturi care rezulta din straturile de convolutie sau pooling sunt reprezentate ca matrici, acestea sunt aplatizate (vectorizate) folosind functia Flatten().</p>
-		<p>Reteaua mai contine si doua straturi de neuroni fully connected (dense) cu 64, respectiv 100 de neuroni.</p>
+		<p>Reteaua mai contine si doua straturi de neuroni fully connected (dense) cu 128, respectiv 100 de neuroni.</p>
 		<br>
 		<p></p>
 	</div>
@@ -97,6 +97,14 @@
 			</div>
 		</div> 
 		</br></br></br>
+	</div>
+	<div class="references">
+		<h3>Referinte</h3>
+		<p>[1] Quick Draw dataset: <a href="https://github.com/googlecreativelab/quickdraw-dataset" target="_blank" rel="noopener noreferrer">https://github.com/googlecreativelab/quickdraw-dataset</a></p>
+		<p>[2] TensorFlow for JavaScript guide: <a href="https://www.tensorflow.org/js/guide/" target="_blank" rel="noopener noreferrer">https://www.tensorflow.org/js/guide/</a></p>
+		<p>[3] Train a model in tf.keras with Colab, and run it in the browser with TensorFlow.js: <a href="https://medium.com/tensorflow/train-on-google-colab-and-run-on-the-browser-a-case-study-8a45f9b1474e" target="_blank" rel="noopener noreferrer">https://medium.com/tensorflow/train-on-google-colab-and-run-on-the-browser-a-case-study-8a45f9b1474e</a></p>
+		<p>[4] Fabric.js Copyright 2008-2015, Printio (Juriy Zaytsev, Maxim Chernyak): <a href="https://gist.github.com/samuelhorwitz/5b8075ae65e658044c503ff15fed07c4" target="_blank" rel="noopener noreferrer">https://gist.github.com/samuelhorwitz/5b8075ae65e658044c503ff15fed07c4</a></p>
+		<br><br>
 	</div>
 </body>
 <script>
