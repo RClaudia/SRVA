@@ -11,23 +11,13 @@ hr {
 	margin-left: 80px;
 	margin-right: 80px;
 }
-
-.description {
-	font-family: Arial, Helvetica, sans-serif;
-	margin-left:80px;
-}
-
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
 }
-.database {
-	font-family: Arial, Helvetica, sans-serif;
-	margin-left:80px;
-}
-.arch, .demo, .sourcecode, .references{
+.database, .results, .description, .arch, .demo, .sourcecode, .references{
 	font-family: Arial, Helvetica, sans-serif;
 	margin-left:80px;
 }
@@ -42,15 +32,12 @@ img {
     -webkit-transition: .2s;
     transition: opacity .2s;
 }
-
 .slider:hover {
     opacity: 1;
 }
-
 .col {
 	margin-left: -600px;
 }
-
 #sym1 {
 	font-style: normal;
 }

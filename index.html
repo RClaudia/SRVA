@@ -59,7 +59,7 @@
 		<p>Sursa bazei de date este următoarea: <a href="https://github.com/googlecreativelab/quickdraw-dataset" target="_blank" rel="noopener noreferrer">https://github.com/googlecreativelab/quickdraw-dataset</a></p>
 		<br>
 	</div>
-		<div class="arch" id="arch">
+	<div class="arch" id="arch">
 		<h3>Arhitectura retelei</h3>
 		<img src="images/arhitectura.png" style="width:1000;">
 		<p>Arhitectura retelei este alcatuita din 3 straturi de convolutie cu filtru de dimensiune 3x3 si functie de activare "ReLU".</p>
@@ -67,7 +67,12 @@
 		<p>Deoarece hartile de trasaturi care rezulta din straturile de convolutie sau pooling sunt reprezentate ca matrici, acestea sunt aplatizate (vectorizate) folosind functia Flatten().</p>
 		<p>Reteaua mai contine si doua straturi de neuroni fully connected (dense) cu 128, respectiv 100 de neuroni.</p>
 		<br>
-		<p></p>
+	</div>
+	<div class="results">
+		<h3>Rezultate obtinute</h3>
+		<p>In urma antrenarii retelei s-a obtinut o acuratete egala cu <b>92.62%</b>.</p>
+		<p>In urma testarii retelei s-a obtinut o acuratete egala cu <b>92.14%</b>.</p>
+		<br>
 	</div>
 	<div class="demo" id="demo">
 		<h3>Demo</h3>
